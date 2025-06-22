@@ -109,6 +109,9 @@ class ChoreUI:
         # Add chore button (only visible in chores section)
         self.add_chore_btn = ttk.Button(self.content_frame, text="Add New Chore", command=self._show_add_chore_dialog)
         
+        # FOR TESTING ONLY: Add Demo Data button (remove before production)
+        self.demo_data_btn = ttk.Button(self.content_frame, text="Load Demo Data (Testing Only)", command=self._load_demo_data)
+        
         # Status bar
         self.status_var = tk.StringVar()
         self.status_bar = ttk.Label(self.root, textvariable=self.status_var, relief=tk.SUNKEN)
@@ -458,6 +461,8 @@ class ChoreUI:
         
         # Add chore button (only visible in chores section)
         self.add_chore_btn.pack(pady=5)
+        # FOR TESTING ONLY: Demo data button (remove before production)
+        self.demo_data_btn.pack(pady=5)
         
         # Status bar
         self.status_bar.pack(fill=tk.X, side=tk.BOTTOM)
@@ -806,6 +811,12 @@ class ChoreUI:
                 messagebox.showinfo("Success", f"Category '{category_name}' deleted successfully!")
             else:
                 messagebox.showerror("Error", f"Could not delete category '{category_name}'.")
+
+    # FOR TESTING ONLY: Demo data loader (remove before production)
+    def _load_demo_data(self):
+        self.chore_manager.create_sample_chores()
+        self.refresh_all()
+        self.status_var.set("Demo data loaded (FOR TESTING ONLY)")
 
 
 class AddChoreDialog:
