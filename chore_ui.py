@@ -20,23 +20,27 @@ class AddChoreDialog:
     This dialog collects all necessary information to create a new chore:
     - Name (required)
     - Description (optional)
+    - Category (required)
     - Frequency type and value
+    - Specific days (for specific_days frequency)
     """
     
-    def __init__(self, parent):
+    def __init__(self, parent, existing_categories: List[str] = None):
         """
         Initialize the Add Chore Dialog.
         
         Args:
             parent: The parent window (main application window)
+            existing_categories: List of existing categories to suggest
         """
         self.parent = parent
         self.result = None
+        self.existing_categories = existing_categories or []
         
         # Create the dialog window
         self.dialog = tk.Toplevel(parent)
         self.dialog.title("Add New Chore")
-        self.dialog.geometry("400x300")
+        self.dialog.geometry("500x450")
         self.dialog.resizable(False, False)
         
         # Make dialog modal (user must interact with it before returning to main window)
@@ -56,11 +60,31 @@ class AddChoreDialog:
         
         # Name field
         self.name_label = tk.Label(self.dialog, text="Chore Name *:")
-        self.name_entry = tk.Entry(self.dialog, width=40)
+        self.name_entry = tk.Entry(self.dialog, width=50)
+        
+        # Category field
+        self.category_label = tk.Label(self.dialog, text="Category *:")
+        self.category_var = tk.StringVar(value="General")
+        if self.existing_categories:
+            self.category_combo = ttk.Combobox(
+                self.dialog,
+                textvariable=self.category_var,
+                values=["General"] + self.existing_categories,
+                state="readonly",
+                width=47
+            )
+        else:
+            self.category_combo = ttk.Combobox(
+                self.dialog,
+                textvariable=self.category_var,
+                values=["General"],
+                state="readonly",
+                width=47
+            )
         
         # Description field
         self.desc_label = tk.Label(self.dialog, text="Description:")
-        self.desc_text = tk.Text(self.dialog, height=3, width=40)
+        self.desc_text = tk.Text(self.dialog, height=3, width=50)
         
         # Frequency frame
         self.freq_frame = tk.LabelFrame(self.dialog, text="Frequency", padx=10, pady=5)
@@ -71,10 +95,11 @@ class AddChoreDialog:
         self.freq_type_combo = ttk.Combobox(
             self.freq_frame, 
             textvariable=self.freq_type_var,
-            values=["daily", "weekly", "monthly", "custom"],
+            values=["daily", "weekly", "monthly", "custom", "specific_days"],
             state="readonly",
-            width=15
+            width=20
         )
+        self.freq_type_combo.bind('<<ComboboxSelected>>', self._on_frequency_type_change)
         
         # Frequency value
         self.freq_value_label = tk.Label(self.freq_frame, text="Every:")
@@ -86,6 +111,18 @@ class AddChoreDialog:
             textvariable=self.freq_value_var,
             width=10
         )
+        
+        # Specific days frame (initially hidden)
+        self.specific_days_frame = tk.LabelFrame(self.dialog, text="Specific Days", padx=10, pady=5)
+        
+        # Day checkboxes
+        self.day_vars = {}
+        days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        for i, day in enumerate(days):
+            var = tk.BooleanVar()
+            self.day_vars[day.lower()] = var
+            cb = tk.Checkbutton(self.specific_days_frame, text=day, variable=var)
+            cb.grid(row=i//4, column=i%4, sticky="w", padx=5, pady=2)
         
         # Buttons
         self.button_frame = tk.Frame(self.dialog)
@@ -105,12 +142,16 @@ class AddChoreDialog:
         self.name_label.grid(row=1, column=0, sticky="w", padx=10, pady=5)
         self.name_entry.grid(row=1, column=1, sticky="ew", padx=10, pady=5)
         
+        # Category field
+        self.category_label.grid(row=2, column=0, sticky="w", padx=10, pady=5)
+        self.category_combo.grid(row=2, column=1, sticky="ew", padx=10, pady=5)
+        
         # Description field
-        self.desc_label.grid(row=2, column=0, sticky="w", padx=10, pady=5)
-        self.desc_text.grid(row=2, column=1, sticky="ew", padx=10, pady=5)
+        self.desc_label.grid(row=3, column=0, sticky="w", padx=10, pady=5)
+        self.desc_text.grid(row=3, column=1, sticky="ew", padx=10, pady=5)
         
         # Frequency frame
-        self.freq_frame.grid(row=3, column=0, columnspan=2, sticky="ew", padx=10, pady=10)
+        self.freq_frame.grid(row=4, column=0, columnspan=2, sticky="ew", padx=10, pady=10)
         
         # Frequency widgets
         self.freq_type_label.grid(row=0, column=0, sticky="w", padx=5, pady=5)
@@ -119,17 +160,29 @@ class AddChoreDialog:
         self.freq_value_label.grid(row=1, column=0, sticky="w", padx=5, pady=5)
         self.freq_value_spinbox.grid(row=1, column=1, sticky="w", padx=5, pady=5)
         
+        # Specific days frame (initially hidden)
+        self.specific_days_frame.grid(row=5, column=0, columnspan=2, sticky="ew", padx=10, pady=5)
+        self.specific_days_frame.grid_remove()  # Hide initially
+        
         # Buttons
-        self.button_frame.grid(row=4, column=0, columnspan=2, pady=20)
+        self.button_frame.grid(row=6, column=0, columnspan=2, pady=20)
         self.ok_button.pack(side="left", padx=10)
         self.cancel_button.pack(side="left", padx=10)
         
         # Configure grid weights
         self.dialog.grid_columnconfigure(1, weight=1)
         self.freq_frame.grid_columnconfigure(1, weight=1)
+        self.specific_days_frame.grid_columnconfigure(0, weight=1)
         
         # Focus on name entry
         self.name_entry.focus()
+    
+    def _on_frequency_type_change(self, event=None):
+        """Handle frequency type change to show/hide specific days frame."""
+        if self.freq_type_var.get() == "specific_days":
+            self.specific_days_frame.grid()  # Show specific days frame
+        else:
+            self.specific_days_frame.grid_remove()  # Hide specific days frame
     
     def _on_ok(self):
         """Handle OK button click - validate and create chore."""
@@ -137,6 +190,12 @@ class AddChoreDialog:
         if not name:
             messagebox.showerror("Error", "Chore name is required!")
             self.name_entry.focus()
+            return
+        
+        category = self.category_var.get().strip()
+        if not category:
+            messagebox.showerror("Error", "Category is required!")
+            self.category_combo.focus()
             return
         
         # Get description
@@ -153,12 +212,22 @@ class AddChoreDialog:
             self.freq_value_spinbox.focus()
             return
         
+        # Get specific days if applicable
+        specific_days = []
+        if frequency_type == "specific_days":
+            specific_days = [day for day, var in self.day_vars.items() if var.get()]
+            if not specific_days:
+                messagebox.showerror("Error", "Please select at least one day for specific days frequency!")
+                return
+        
         # Create the chore
         chore = Chore(
             name=name,
             frequency_type=frequency_type,
             frequency_value=frequency_value,
-            description=description
+            description=description,
+            category=category,
+            specific_days=specific_days
         )
         
         self.result = chore
@@ -191,7 +260,8 @@ class ChoreListFrame(ttk.Frame):
     
     def __init__(self, parent, title: str, chores: List[Chore], 
                  on_chore_click: Optional[Callable[[Chore], None]] = None,
-                 show_checkboxes: bool = True):
+                 show_checkboxes: bool = True,
+                 group_by_category: bool = True):
         """
         Initialize the ChoreListFrame.
         
@@ -201,12 +271,14 @@ class ChoreListFrame(ttk.Frame):
             chores: List of chores to display
             on_chore_click: Callback function when a chore is clicked
             show_checkboxes: Whether to show checkboxes for completion
+            group_by_category: Whether to group chores by category
         """
         super().__init__(parent)
         self.title = title
         self.chores = chores
         self.on_chore_click = on_chore_click
         self.show_checkboxes = show_checkboxes
+        self.group_by_category = group_by_category
         
         self._create_widgets()
         self._setup_layout()
@@ -262,21 +334,48 @@ class ChoreListFrame(ttk.Frame):
             self.empty_label.pack(pady=20)
             return
         
-        # Create widgets for each chore
-        for i, chore in enumerate(self.chores):
-            self._create_chore_widget(chore, i)
+        if self.group_by_category:
+            self._display_grouped_by_category()
+        else:
+            self._display_flat_list()
     
-    def _create_chore_widget(self, chore: Chore, index: int):
+    def _display_grouped_by_category(self):
+        """Display chores grouped by category."""
+        # Group chores by category
+        categories = {}
+        for chore in self.chores:
+            if chore.category not in categories:
+                categories[chore.category] = []
+            categories[chore.category].append(chore)
+        
+        # Display each category
+        for category in sorted(categories.keys()):
+            # Category header
+            category_frame = tk.Frame(self.scrollable_frame, relief="solid", borderwidth=1, bg="lightgray")
+            category_frame.pack(fill="x", padx=5, pady=2)
+            
+            category_label = tk.Label(category_frame, text=category, font=("Arial", 10, "bold"), bg="lightgray")
+            category_label.pack(anchor="w", padx=5, pady=2)
+            
+            # Chores in this category
+            for chore in sorted(categories[category], key=lambda x: x.name):
+                self._create_chore_widget(chore)
+    
+    def _display_flat_list(self):
+        """Display chores in a flat list without grouping."""
+        for chore in self.chores:
+            self._create_chore_widget(chore)
+    
+    def _create_chore_widget(self, chore: Chore):
         """
         Create a widget for a single chore.
         
         Args:
             chore: The chore to display
-            index: The index of the chore in the list
         """
         # Create frame for this chore
         chore_frame = tk.Frame(self.scrollable_frame, relief="solid", borderwidth=1)
-        chore_frame.pack(fill="x", padx=5, pady=2)
+        chore_frame.pack(fill="x", padx=5, pady=1)
         
         # Checkbox for completion (if enabled)
         if self.show_checkboxes:
@@ -292,17 +391,18 @@ class ChoreListFrame(ttk.Frame):
         info_frame = tk.Frame(chore_frame)
         info_frame.pack(side="left", fill="x", expand=True, padx=5, pady=5)
         
-        # Chore name
+        # Chore name and category
+        name_text = f"{chore.name} ({chore.category})"
         name_label = tk.Label(
             info_frame,
-            text=chore.name,
+            text=name_text,
             font=("Arial", 10, "bold" if not chore.completed_today else "normal"),
             fg="green" if chore.completed_today else "black"
         )
         name_label.pack(anchor="w")
         
         # Chore details
-        details_text = f"Frequency: {chore.frequency_type} (every {chore.frequency_value})"
+        details_text = f"Frequency: {chore.get_frequency_description()}"
         if chore.next_due_date:
             details_text += f" | Due: {chore.next_due_date.strftime('%Y-%m-%d')}"
         if chore.streak_counter > 0:
@@ -365,8 +465,8 @@ class ChoresAIApp:
         # Create the main window
         self.root = tk.Tk()
         self.root.title("Chores.ai - Desktop POC")
-        self.root.geometry("800x600")
-        self.root.minsize(600, 400)
+        self.root.geometry("900x700")
+        self.root.minsize(700, 500)
         
         # Initialize the chore manager
         self.chore_manager = ChoreManager()
@@ -415,7 +515,8 @@ class ChoresAIApp:
             "Chores Due Today",
             [],
             on_chore_click=self._on_chore_click,
-            show_checkboxes=True
+            show_checkboxes=True,
+            group_by_category=True
         )
         
         # All chores tab
@@ -425,7 +526,8 @@ class ChoresAIApp:
             "All Chores",
             [],
             on_chore_click=self._on_chore_click,
-            show_checkboxes=False
+            show_checkboxes=False,
+            group_by_category=True
         )
         
         # Overdue chores tab
@@ -435,7 +537,19 @@ class ChoresAIApp:
             "Overdue Chores",
             [],
             on_chore_click=self._on_chore_click,
-            show_checkboxes=False
+            show_checkboxes=False,
+            group_by_category=True
+        )
+        
+        # Categories tab
+        self.categories_frame = ttk.Frame(self.notebook)
+        self.categories_chores_list = ChoreListFrame(
+            self.categories_frame,
+            "Chores by Category",
+            [],
+            on_chore_click=self._on_chore_click,
+            show_checkboxes=False,
+            group_by_category=True
         )
         
         # Buttons frame
@@ -479,6 +593,7 @@ class ChoresAIApp:
         self.notebook.add(self.today_frame, text="Today's Chores")
         self.notebook.add(self.all_frame, text="All Chores")
         self.notebook.add(self.overdue_frame, text="Overdue")
+        self.notebook.add(self.categories_frame, text="Categories")
         
         # Today's chores
         self.today_chores_list.pack(fill="both", expand=True, padx=5, pady=5)
@@ -488,6 +603,9 @@ class ChoresAIApp:
         
         # Overdue chores
         self.overdue_chores_list.pack(fill="both", expand=True, padx=5, pady=5)
+        
+        # Categories chores
+        self.categories_chores_list.pack(fill="both", expand=True, padx=5, pady=5)
         
         # Buttons
         self.button_frame.pack(fill="x", pady=(10, 0))
@@ -529,6 +647,7 @@ class ChoresAIApp:
             f"Due Today: {stats['due_today']} | "
             f"Completed Today: {stats['completed_today']} | "
             f"Overdue: {stats['overdue']} | "
+            f"Categories: {stats['categories']} | "
             f"Completion Rate: {stats['completion_rate_today']:.1f}%"
         )
         self.stats_label.config(text=stats_text)
@@ -537,10 +656,12 @@ class ChoresAIApp:
         self.today_chores_list.update_chores(self.chore_manager.get_chores_due_today())
         self.all_chores_list.update_chores(self.chore_manager.get_all_chores())
         self.overdue_chores_list.update_chores(self.chore_manager.get_overdue_chores())
+        self.categories_chores_list.update_chores(self.chore_manager.get_all_chores())
     
     def _add_chore(self):
         """Open the add chore dialog."""
-        dialog = AddChoreDialog(self.root)
+        existing_categories = self.chore_manager.get_categories()
+        dialog = AddChoreDialog(self.root, existing_categories)
         new_chore = dialog.show()
         
         if new_chore:
@@ -564,9 +685,10 @@ class ChoresAIApp:
         """
         # Show chore details in a message box
         details = f"Chore: {chore.name}\n"
+        details += f"Category: {chore.category}\n"
         if chore.description:
             details += f"Description: {chore.description}\n"
-        details += f"Frequency: {chore.frequency_type} (every {chore.frequency_value})\n"
+        details += f"Frequency: {chore.get_frequency_description()}\n"
         if chore.next_due_date:
             details += f"Next Due: {chore.next_due_date.strftime('%Y-%m-%d')}\n"
         if chore.last_completed_date:
@@ -608,12 +730,13 @@ class ChoresAIApp:
 A simple desktop application for managing daily chores and tasks.
 
 Features:
-• Track chores with different frequencies
+• Track chores with different frequencies (including specific days)
+• Organize chores by categories
 • Mark chores as complete
 • View overdue and completed chores
 • Persistent data storage
 
-Version: 1.0
+Version: 1.1
 Built with Python and Tkinter"""
         
         messagebox.showinfo("About Chores.ai", about_text)

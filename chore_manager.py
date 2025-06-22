@@ -8,7 +8,7 @@ and provides business logic for the application.
 import json
 import os
 from datetime import datetime
-from typing import List, Optional, Dict, Any
+from typing import List, Optional, Dict, Any, Set
 from chore_model import Chore
 
 
@@ -19,6 +19,7 @@ class ChoreManager:
     This class is responsible for:
     - Storing and retrieving chores
     - Filtering chores by status (due today, overdue, completed, etc.)
+    - Managing categories
     - Saving/loading chores to/from file
     - Managing chore lifecycle
     """
@@ -63,10 +64,10 @@ class ChoreManager:
         Get all chores that are due today.
         
         Returns:
-            List of chores due today, sorted by name
+            List of chores due today, sorted by category then name
         """
         due_today = [chore for chore in self.chores if chore.is_due_today()]
-        return sorted(due_today, key=lambda x: x.name)
+        return sorted(due_today, key=lambda x: (x.category, x.name))
     
     def get_overdue_chores(self) -> List[Chore]:
         """
@@ -93,9 +94,57 @@ class ChoreManager:
         Get all chores in the collection.
         
         Returns:
-            List of all chores, sorted by name
+            List of all chores, sorted by category then name
         """
-        return sorted(self.chores, key=lambda x: x.name)
+        return sorted(self.chores, key=lambda x: (x.category, x.name))
+    
+    def get_chores_by_category(self, category: str) -> List[Chore]:
+        """
+        Get all chores in a specific category.
+        
+        Args:
+            category: The category to filter by
+            
+        Returns:
+            List of chores in the specified category, sorted by name
+        """
+        category_chores = [chore for chore in self.chores if chore.category.lower() == category.lower()]
+        return sorted(category_chores, key=lambda x: x.name)
+    
+    def get_categories(self) -> List[str]:
+        """
+        Get all unique categories used by chores.
+        
+        Returns:
+            List of category names, sorted alphabetically
+        """
+        categories = set(chore.category for chore in self.chores)
+        return sorted(list(categories))
+    
+    def get_category_statistics(self) -> Dict[str, Dict[str, int]]:
+        """
+        Get statistics broken down by category.
+        
+        Returns:
+            Dictionary with category statistics
+        """
+        stats = {}
+        categories = self.get_categories()
+        
+        for category in categories:
+            category_chores = self.get_chores_by_category(category)
+            due_today = [c for c in category_chores if c.is_due_today()]
+            completed_today = [c for c in category_chores if c.completed_today]
+            overdue = [c for c in category_chores if c.is_overdue()]
+            
+            stats[category] = {
+                'total': len(category_chores),
+                'due_today': len(due_today),
+                'completed_today': len(completed_today),
+                'overdue': len(overdue)
+            }
+        
+        return stats
     
     def get_chore_by_name(self, name: str) -> Optional[Chore]:
         """
@@ -152,7 +201,7 @@ class ChoreManager:
             data = {
                 'chores': chore_data,
                 'last_save_date': datetime.now().isoformat(),
-                'version': '1.0'
+                'version': '1.1'  # Updated version for new features
             }
             
             # Write to file
@@ -208,6 +257,7 @@ class ChoreManager:
         due_today = len(self.get_chores_due_today())
         overdue = len(self.get_overdue_chores())
         completed_today = len(self.get_completed_chores_today())
+        categories = len(self.get_categories())
         
         # Calculate completion rate for today
         completion_rate = 0
@@ -224,6 +274,7 @@ class ChoreManager:
             'completed_today': completed_today,
             'completion_rate_today': completion_rate,
             'longest_streak': longest_streak,
+            'categories': categories,
             'last_save_date': self.last_save_date
         }
     
@@ -231,21 +282,33 @@ class ChoreManager:
         """
         Create some sample chores for testing/demo purposes.
         
-        This method creates a few example chores to help users get started.
+        This method creates a few example chores with different categories and frequencies.
         """
         sample_chores = [
-            Chore("Make bed", "daily", 1, "Start the day with a tidy bedroom"),
-            Chore("Wash dishes", "daily", 1, "Keep the kitchen clean"),
-            Chore("Take out trash", "weekly", 1, "Empty all trash bins"),
-            Chore("Vacuum floors", "weekly", 1, "Clean carpets and hard floors"),
-            Chore("Pay bills", "monthly", 1, "Review and pay monthly bills"),
-            Chore("Water plants", "daily", 2, "Keep plants healthy and hydrated")
+            # Daily chores
+            Chore("Make bed", "daily", 1, "Start the day with a tidy bedroom", "Bedroom"),
+            Chore("Wash dishes", "daily", 1, "Keep the kitchen clean", "Kitchen"),
+            Chore("Water plants", "daily", 2, "Keep plants healthy and hydrated", "Garden"),
+            
+            # Weekly chores
+            Chore("Take out trash", "weekly", 1, "Empty all trash bins", "Household"),
+            Chore("Vacuum floors", "weekly", 1, "Clean carpets and hard floors", "Cleaning"),
+            Chore("Laundry", "weekly", 1, "Wash and fold clothes", "Laundry"),
+            
+            # Monthly chores
+            Chore("Pay bills", "monthly", 1, "Review and pay monthly bills", "Finance"),
+            Chore("Clean refrigerator", "monthly", 1, "Deep clean the fridge", "Kitchen"),
+            
+            # Specific days chores
+            Chore("Grocery shopping", "specific_days", 1, "Buy groceries for the week", "Shopping", ["monday", "friday"]),
+            Chore("Gym workout", "specific_days", 1, "Exercise routine", "Health", ["monday", "wednesday", "friday"]),
+            Chore("Call family", "specific_days", 1, "Check in with family members", "Personal", ["sunday"]),
         ]
         
         for chore in sample_chores:
             self.add_chore(chore)
         
-        print(f"Created {len(sample_chores)} sample chores")
+        print(f"Created {len(sample_chores)} sample chores with categories")
     
     def clear_all_chores(self) -> None:
         """
