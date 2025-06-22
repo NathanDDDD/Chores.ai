@@ -1,0 +1,619 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/27.0.9 Chrome/134.0.6998.205 Electron/35.4.0 Safari/537.36" version="27.0.9" pages="2">
+  <diagram name="Architecture" id="FiGEZMF12pK69H9x_0NO">
+    <mxGraphModel dx="6215" dy="2505" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-3" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="180" y="170" width="480" height="490" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-4" value="Chores.ai - name in progress" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WxM9wMD1Jdz50eCm3vge-3">
+          <mxGeometry width="480" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-5" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WxM9wMD1Jdz50eCm3vge-3">
+          <mxGeometry y="40" width="480" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-6" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WxM9wMD1Jdz50eCm3vge-3">
+          <mxGeometry y="40" width="120" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-7" value="Chores" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WxM9wMD1Jdz50eCm3vge-3">
+          <mxGeometry y="40" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-8" value="Habits" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WxM9wMD1Jdz50eCm3vge-3">
+          <mxGeometry y="80" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-9" value="Goals" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WxM9wMD1Jdz50eCm3vge-3">
+          <mxGeometry y="120" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-10" value="Social Network" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WxM9wMD1Jdz50eCm3vge-3">
+          <mxGeometry y="160" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-11" value="User" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WxM9wMD1Jdz50eCm3vge-3">
+          <mxGeometry y="450" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-12" value="Achievements" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WxM9wMD1Jdz50eCm3vge-3">
+          <mxGeometry y="200" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-13" value="Screen" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WxM9wMD1Jdz50eCm3vge-3">
+          <mxGeometry x="120" y="40" width="360" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-14" value="Store" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WxM9wMD1Jdz50eCm3vge-3">
+          <mxGeometry y="240" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-15" value="Settings" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WxM9wMD1Jdz50eCm3vge-3">
+          <mxGeometry y="280" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-16" value="Chores" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-3520" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WxM9wMD1Jdz50eCm3vge-7" target="WxM9wMD1Jdz50eCm3vge-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-46" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="WxM9wMD1Jdz50eCm3vge-42" target="WxM9wMD1Jdz50eCm3vge-48">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-3390" y="555" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-42" value="Click any day to open details" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-3590" y="410" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-20" value="Chores.ai - name in progress" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-4110" y="180" width="480" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-21" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-4110" y="220" width="480" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-22" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-4110" y="220" width="120" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-23" value="Chores" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" vertex="1" parent="1">
+          <mxGeometry x="-4110" y="220" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-24" value="Habits" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-4110" y="260" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-25" value="Goals" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-4110" y="300" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-26" value="Social Network" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-4110" y="340" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-27" value="User" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-4110" y="630" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-28" value="Achievements" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-4110" y="380" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-29" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-3990" y="220" width="360" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-30" value="Store" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-4110" y="420" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-31" value="Settings" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-4110" y="460" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-32" value="Today&#39;s Checklist - Only Chores Due Today" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-3990" y="220" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-66" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="WxM9wMD1Jdz50eCm3vge-34" target="WxM9wMD1Jdz50eCm3vge-64">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-3520" y="320" />
+              <mxPoint x="-3520" y="280" />
+              <mxPoint x="-2900" y="280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-104" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="WxM9wMD1Jdz50eCm3vge-33" target="WxM9wMD1Jdz50eCm3vge-105">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-3560" y="39.999999999999886" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-33" value="Chore Name | Frequency Type | Frequency Value | Last Completed Date | Next Due Date | Checkbox" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-3990" y="260" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-34" value="Chore Name No. 1" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-3990" y="300" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-35" value="Calendar View - Monthly Grid Layout With Visual Status Per Day" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-3990" y="340" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-39" value="" style="sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.mscae.enterprise.calendar" vertex="1" parent="1">
+          <mxGeometry x="-3883.17" y="380" width="146.34" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-41" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="WxM9wMD1Jdz50eCm3vge-39" target="WxM9wMD1Jdz50eCm3vge-42">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-3590" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-47" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-3400" y="300" width="360" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-48" value="dd/MM/yyyy details" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-3400" y="300" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="12FlqZNLPnlhC5x7qdFU-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="WxM9wMD1Jdz50eCm3vge-49" target="12FlqZNLPnlhC5x7qdFU-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-49" value="List of Active Chores" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-3400" y="340" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-65" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WxM9wMD1Jdz50eCm3vge-52" target="WxM9wMD1Jdz50eCm3vge-64">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-52" value="&lt;span style=&quot;&quot;&gt;Chore Name No. 1&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-3400" y="420" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-54" value="Chore Name | Frequency Type | Frequency Value | Last Completed Date | Next Due Date | Checkbox" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-3400" y="380" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="12FlqZNLPnlhC5x7qdFU-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="WxM9wMD1Jdz50eCm3vge-55" target="12FlqZNLPnlhC5x7qdFU-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-55" value="List of Missed Chores" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-3400" y="460" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-56" value="&lt;span style=&quot;&quot;&gt;Chore Name No. 1&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-3400" y="540" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-67" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="WxM9wMD1Jdz50eCm3vge-56" target="WxM9wMD1Jdz50eCm3vge-64">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kvR3w83BaUC2e9Kev_YQ-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="WxM9wMD1Jdz50eCm3vge-57" target="B7ERChRsNRI-Do7pWdBn-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-2970" y="520" />
+              <mxPoint x="-2970" y="590" />
+              <mxPoint x="-2675" y="590" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-57" value="Chore Name | Frequency Type | Frequency Value | Last Completed Date | Next Due Date | Miss Counter" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-3400" y="500" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="12FlqZNLPnlhC5x7qdFU-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="WxM9wMD1Jdz50eCm3vge-58" target="12FlqZNLPnlhC5x7qdFU-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-58" value="List of Completed Chores" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-3400" y="580" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-59" value="&lt;span style=&quot;&quot;&gt;Chore Name No. 1&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-3400" y="660" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-68" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.75;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="WxM9wMD1Jdz50eCm3vge-59" target="WxM9wMD1Jdz50eCm3vge-64">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kvR3w83BaUC2e9Kev_YQ-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="WxM9wMD1Jdz50eCm3vge-60" target="B7ERChRsNRI-Do7pWdBn-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-60" value="Chore Name | Frequency Type | Frequency Value | This Day Completion Date &amp;amp; Time | Streak Counter" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-3400" y="620" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-62" value="Close" style="rounded=1;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontStyle=0;fontSize=12;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="-3263" y="710" width="86" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-121" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="WxM9wMD1Jdz50eCm3vge-63" target="WxM9wMD1Jdz50eCm3vge-109">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-3900" y="990" />
+              <mxPoint x="-2460" y="990" />
+              <mxPoint x="-2460" y="900" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-63" value="Add New Chore" style="rounded=1;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontStyle=0;fontSize=12;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="-3960" y="530" width="120" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-70" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="WxM9wMD1Jdz50eCm3vge-64" target="WxM9wMD1Jdz50eCm3vge-73">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-2760" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-64" value="Right Click Function" style="whiteSpace=wrap;html=1;align=center;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2960" y="410" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-119" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="WxM9wMD1Jdz50eCm3vge-71" target="WxM9wMD1Jdz50eCm3vge-109">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-2300" y="420" />
+              <mxPoint x="-2300" y="770" />
+              <mxPoint x="-2280" y="770" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-71" value="Edit Chore Sequence" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-2760" y="400" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-123" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="WxM9wMD1Jdz50eCm3vge-73" target="WxM9wMD1Jdz50eCm3vge-122">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-205" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="WxM9wMD1Jdz50eCm3vge-72" target="WxM9wMD1Jdz50eCm3vge-207">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1900" y="320" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-2780" y="460" />
+              <mxPoint x="-2780" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-72" value="Edit Chore Instance" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-2760" y="440" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-73" value="Delete Chore Instance" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-2760" y="480" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-118" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="WxM9wMD1Jdz50eCm3vge-75" target="WxM9wMD1Jdz50eCm3vge-109">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-2300" y="380" />
+              <mxPoint x="-2300" y="770" />
+              <mxPoint x="-2280" y="770" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-75" value="Add New Chore Sequence" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-2760" y="360" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-105" value="Today&#39;s Checklist Data:&lt;div&gt;Show Only Chore Instances With Due Status and Chore Instances With Complete Status when their Date = Today&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Mark Chore Instances With Due Status in red when their date &amp;lt; Today&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;div&gt;Chore Name = unique chore instance&lt;/div&gt;&lt;div&gt;Frequency Type = frequency type of chore sequence&lt;/div&gt;&lt;div&gt;Last Completed Date = the date &amp;amp; time of the last chore instance in the chore sequence in status complete&lt;/div&gt;&lt;div&gt;Next Due Date = the date &amp;amp; time of the first chore instance in the chore sequence in status due&lt;/div&gt;&lt;div&gt;Checkbox = marking changes status of chore instance to Completed, unmarking changes it back to previous status&lt;/div&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-3736.83" y="-290" width="350" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-108" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-2370" y="880" width="360" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-109" value="Add / Edit Chore Sequence Function" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-2370" y="880" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-128" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WxM9wMD1Jdz50eCm3vge-110" target="WxM9wMD1Jdz50eCm3vge-127">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-110" value="Name:" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-2370" y="920" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-111" value="Close" style="rounded=1;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontStyle=0;fontSize=12;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="-2130" y="1290" width="86" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-131" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WxM9wMD1Jdz50eCm3vge-112" target="WxM9wMD1Jdz50eCm3vge-130">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-112" value="Category:" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-2370" y="960" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-133" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WxM9wMD1Jdz50eCm3vge-113" target="WxM9wMD1Jdz50eCm3vge-132">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-113" value="Frequency Type:" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-2370" y="1000" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-169" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WxM9wMD1Jdz50eCm3vge-114" target="WxM9wMD1Jdz50eCm3vge-168">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-114" value="Description:" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-2370" y="1040" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-172" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WxM9wMD1Jdz50eCm3vge-115">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-2610" y="1200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-193" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;" edge="1" parent="1" source="WxM9wMD1Jdz50eCm3vge-115" target="WxM9wMD1Jdz50eCm3vge-140">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-115" value="Date &amp;amp; Time:" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-2370" y="1080" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-198" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="WxM9wMD1Jdz50eCm3vge-116" target="WxM9wMD1Jdz50eCm3vge-197">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-2410" y="1240" />
+              <mxPoint x="-2410" y="1520" />
+              <mxPoint x="-2305" y="1520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-116" value="Add Chore Sequence / Save Chore Sequence" style="rounded=1;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontStyle=0;fontSize=12;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="-2350" y="1200" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-122" value="Deletes this chore unique instance in the calendar" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2470" y="560" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-203" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="WxM9wMD1Jdz50eCm3vge-126" target="WxM9wMD1Jdz50eCm3vge-202">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-126" value="Delete Chore Sequence" style="rounded=1;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontStyle=0;fontSize=12;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="-2350" y="1290" width="180" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-127" value="Friendly Name Of Chore Sequence" style="whiteSpace=wrap;html=1;align=center;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-1930" y="850" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-130" value="Labels Of The Chore Sequence:&lt;div&gt;House Tasks, Workout Routine, Reading Routine, etc&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=center;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-1790" y="880" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-135" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WxM9wMD1Jdz50eCm3vge-132" target="WxM9wMD1Jdz50eCm3vge-134">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-132" value="Depicts the sequence type of the Chore Sequence" style="whiteSpace=wrap;html=1;align=center;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-1790" y="1060" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-134" value="" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-1790" y="1200" width="330" height="760" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-136" value="Frequency Type Function" style="whiteSpace=wrap;html=1;align=center;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-1790" y="1200" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-138" value="Repeat: Daily, Weekly (Choose Week Days), Monthly (Choose dd in dd/MM/yyyy), Every X Days / Weeks / Months" style="whiteSpace=wrap;html=1;align=center;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-1790" y="1260" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-139" value="Daily Interface" style="whiteSpace=wrap;html=1;align=center;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-1790" y="1320" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-140" value="Start Date: = Date from Add / Edit Chore Function" style="whiteSpace=wrap;html=1;align=left;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-1790" y="1380" width="330" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-145" value="Sunday" style="shape=ellipse;strokeWidth=4;align=left;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" vertex="1" parent="1">
+          <mxGeometry x="-1759" y="1520" width="10" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-150" value="Weekly Interface" style="whiteSpace=wrap;html=1;align=center;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-1790" y="1440" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-152" value="Monday" style="shape=ellipse;strokeWidth=4;align=left;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" vertex="1" parent="1">
+          <mxGeometry x="-1675" y="1520" width="10" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-153" value="Tuesday" style="shape=ellipse;strokeWidth=4;align=left;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" vertex="1" parent="1">
+          <mxGeometry x="-1590" y="1520" width="10" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-154" value="Wednesday" style="shape=ellipse;strokeWidth=4;align=left;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" vertex="1" parent="1">
+          <mxGeometry x="-1759" y="1550" width="10" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-155" value="Thursday" style="shape=ellipse;strokeWidth=4;align=left;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" vertex="1" parent="1">
+          <mxGeometry x="-1675" y="1550" width="10" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-156" value="Friday" style="shape=ellipse;strokeWidth=4;align=left;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" vertex="1" parent="1">
+          <mxGeometry x="-1590" y="1550" width="10" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-157" value="Saturday" style="shape=ellipse;strokeWidth=4;align=left;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" vertex="1" parent="1">
+          <mxGeometry x="-1759" y="1580" width="10" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-161" value="Repeat Every: X Weeks" style="whiteSpace=wrap;html=1;align=left;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-1790" y="1600" width="330" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-162" value="Monthly interface" style="whiteSpace=wrap;html=1;align=center;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-1790" y="1630" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-163" value="Select Custom Dates To Repeat" style="sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.mscae.enterprise.calendar" vertex="1" parent="1">
+          <mxGeometry x="-1698.17" y="1710" width="146.34" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-164" value="Repeat Every: X Months" style="whiteSpace=wrap;html=1;align=left;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-1790" y="1860" width="330" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-165" value="Repeat Every: X Days" style="whiteSpace=wrap;html=1;align=left;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-1790" y="1410" width="330" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-166" value="Close" style="rounded=1;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontStyle=0;fontSize=12;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="-1570" y="1910" width="86" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-167" value="Save" style="rounded=1;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontStyle=0;fontSize=12;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="-1770" y="1910" width="86" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-168" value="Friendly Description Of Chore Sequence" style="whiteSpace=wrap;html=1;align=center;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2690" y="1030" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-170" value="Close" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-2760" y="520" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-173" value="" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2770" y="1205" width="330" height="375" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-174" value="Date &amp;amp; Time Interface" style="whiteSpace=wrap;html=1;align=center;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2770" y="1205" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-188" value="Select Date From Calendar" style="sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.mscae.enterprise.calendar" vertex="1" parent="1">
+          <mxGeometry x="-2678.17" y="1280" width="146.34" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-191" value="Close" style="rounded=1;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontStyle=0;fontSize=12;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="-2556" y="1516.5" width="86" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-192" value="Save" style="rounded=1;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontStyle=0;fontSize=12;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="-2740" y="1516.5" width="86" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-194" value="Start Time:" style="whiteSpace=wrap;html=1;align=left;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2770" y="1430" width="330" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-195" value="End Time:" style="whiteSpace=wrap;html=1;align=left;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2770" y="1460" width="330" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-197" value="If accessed from Edit Chore Sequence then = Save Chore Sequence&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;if accessed from Add New Chore Sequence then = Add Chore Sequence&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=center;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2410" y="1640" width="210" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-202" value="Deletes Chore Sequence from calendar" style="whiteSpace=wrap;html=1;align=center;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2320" y="1380" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-206" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-1850" y="300" width="360" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-207" value="Edit Chore Instance Function" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-1850" y="300" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="12FlqZNLPnlhC5x7qdFU-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WxM9wMD1Jdz50eCm3vge-208" target="12FlqZNLPnlhC5x7qdFU-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-208" value="Name:" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-1850" y="340" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-209" value="Close" style="rounded=1;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontStyle=0;fontSize=12;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="-1610" y="710" width="86" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="12FlqZNLPnlhC5x7qdFU-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WxM9wMD1Jdz50eCm3vge-210" target="12FlqZNLPnlhC5x7qdFU-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-210" value="Category:" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-1850" y="380" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="12FlqZNLPnlhC5x7qdFU-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="WxM9wMD1Jdz50eCm3vge-212" target="12FlqZNLPnlhC5x7qdFU-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-212" value="Description:" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-1850" y="420" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="12FlqZNLPnlhC5x7qdFU-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WxM9wMD1Jdz50eCm3vge-213" target="12FlqZNLPnlhC5x7qdFU-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-213" value="Date &amp;amp; Time:" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-1850" y="460" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-215" value="Delete Chore Instance" style="rounded=1;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontStyle=0;fontSize=12;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="-1830" y="710" width="180" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="WxM9wMD1Jdz50eCm3vge-216" value="Save Chore Instance" style="rounded=1;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontStyle=0;fontSize=12;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="-1830" y="667" width="180" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="B7ERChRsNRI-Do7pWdBn-2" value="Chore Data:&lt;div&gt;Miss Counter = The Number Of Sequenced Chore Instances In The Sequence with Missed Status and Containing This Chore Instance&lt;/div&gt;&lt;div&gt;Streak Counter = The Number Of Sequenced Chore Instances In The Sequence with Completed Status and Containing This Chore Instance&lt;/div&gt;&lt;div&gt;This Day Completion Date &amp;amp; Time&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-2850" y="700" width="350" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="12FlqZNLPnlhC5x7qdFU-1" value="Friendly Name Of Chore Instance" style="whiteSpace=wrap;html=1;align=center;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-1290" y="330" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="12FlqZNLPnlhC5x7qdFU-3" value="&lt;span style=&quot;&quot;&gt;Labels Of The Chore Instance:&lt;/span&gt;&lt;div style=&quot;&quot;&gt;House Tasks, Workout Routine, Reading Routine, etc&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=center;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-1290" y="410" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="12FlqZNLPnlhC5x7qdFU-5" value="Friendly Description Of Chore Sequence" style="whiteSpace=wrap;html=1;align=center;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2080" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="12FlqZNLPnlhC5x7qdFU-7" value="" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2252" y="452.5" width="330" height="375" as="geometry" />
+        </mxCell>
+        <mxCell id="12FlqZNLPnlhC5x7qdFU-8" value="Date &amp;amp; Time Interface" style="whiteSpace=wrap;html=1;align=center;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2252" y="452.5" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="12FlqZNLPnlhC5x7qdFU-9" value="Select Date From Calendar" style="sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.mscae.enterprise.calendar" vertex="1" parent="1">
+          <mxGeometry x="-2160.17" y="527.5" width="146.34" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="12FlqZNLPnlhC5x7qdFU-10" value="Close" style="rounded=1;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontStyle=0;fontSize=12;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="-2038" y="764" width="86" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="12FlqZNLPnlhC5x7qdFU-11" value="Save" style="rounded=1;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontStyle=0;fontSize=12;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="-2222" y="764" width="86" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="12FlqZNLPnlhC5x7qdFU-12" value="Start Time:" style="whiteSpace=wrap;html=1;align=left;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2252" y="677.5" width="330" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="12FlqZNLPnlhC5x7qdFU-13" value="End Time:" style="whiteSpace=wrap;html=1;align=left;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2252" y="707.5" width="330" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="12FlqZNLPnlhC5x7qdFU-15" value="Daily Details Contain Lists Of:&lt;div&gt;Active Chores = Chore instances that Date = day date and in status Due&lt;/div&gt;&lt;div&gt;Missed Chores = Chore Instances that Date = day date and in status Missed&lt;/div&gt;&lt;div&gt;Completed Chores = Chores Instances that Date = day date and in Completed Status&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-3810" y="740" width="340" height="200" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="Dg9fuqP0z6Lk00OXESq0" name="Dictionary">
+    <mxGraphModel dx="786" dy="562" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="61pUOCdYA4Ud7aqYlrMG-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="20Q5iRajeQfxoAu31qEk-1" target="61pUOCdYA4Ud7aqYlrMG-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="20Q5iRajeQfxoAu31qEk-1" value="Class Chore Sequence" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="20Q5iRajeQfxoAu31qEk-2" value="Properties" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;" vertex="1" parent="1">
+          <mxGeometry x="810" y="420" width="140" height="156" as="geometry" />
+        </mxCell>
+        <mxCell id="20Q5iRajeQfxoAu31qEk-3" value="Friendly Name" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="20Q5iRajeQfxoAu31qEk-2">
+          <mxGeometry y="26" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="20Q5iRajeQfxoAu31qEk-4" value="Category" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="20Q5iRajeQfxoAu31qEk-2">
+          <mxGeometry y="52" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="20Q5iRajeQfxoAu31qEk-5" value="Frequency Type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="20Q5iRajeQfxoAu31qEk-2">
+          <mxGeometry y="78" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="61pUOCdYA4Ud7aqYlrMG-1" value="Description" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="20Q5iRajeQfxoAu31qEk-2">
+          <mxGeometry y="104" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="61pUOCdYA4Ud7aqYlrMG-2" value="Date &amp;amp; Time" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="20Q5iRajeQfxoAu31qEk-2">
+          <mxGeometry y="130" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="20Q5iRajeQfxoAu31qEk-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="20Q5iRajeQfxoAu31qEk-1" target="20Q5iRajeQfxoAu31qEk-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="880" y="180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="61pUOCdYA4Ud7aqYlrMG-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="61pUOCdYA4Ud7aqYlrMG-3" target="61pUOCdYA4Ud7aqYlrMG-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="61pUOCdYA4Ud7aqYlrMG-3" value="Function:&lt;div&gt;Creates Chore Instances Based On Frequency Type Calculation&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="290" width="120" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="61pUOCdYA4Ud7aqYlrMG-6" value="Object Chore Instance" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="470" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="61pUOCdYA4Ud7aqYlrMG-8" value="Properties" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;" vertex="1" parent="1">
+          <mxGeometry x="530" y="420" width="140" height="156" as="geometry" />
+        </mxCell>
+        <mxCell id="61pUOCdYA4Ud7aqYlrMG-9" value="Friendly Name" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="61pUOCdYA4Ud7aqYlrMG-8">
+          <mxGeometry y="26" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="61pUOCdYA4Ud7aqYlrMG-10" value="Category" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="61pUOCdYA4Ud7aqYlrMG-8">
+          <mxGeometry y="52" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="61pUOCdYA4Ud7aqYlrMG-12" value="Description" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="61pUOCdYA4Ud7aqYlrMG-8">
+          <mxGeometry y="78" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="61pUOCdYA4Ud7aqYlrMG-13" value="Date &amp;amp; Time" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="61pUOCdYA4Ud7aqYlrMG-8">
+          <mxGeometry y="104" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="GuUz6QWNCdzZyZeFkQ5n-1" value="Chore Status" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="61pUOCdYA4Ud7aqYlrMG-8">
+          <mxGeometry y="130" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="61pUOCdYA4Ud7aqYlrMG-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.01;entryY=0.09;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="61pUOCdYA4Ud7aqYlrMG-6" target="61pUOCdYA4Ud7aqYlrMG-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="61pUOCdYA4Ud7aqYlrMG-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="20Q5iRajeQfxoAu31qEk-3" target="61pUOCdYA4Ud7aqYlrMG-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="61pUOCdYA4Ud7aqYlrMG-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="20Q5iRajeQfxoAu31qEk-4" target="61pUOCdYA4Ud7aqYlrMG-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="61pUOCdYA4Ud7aqYlrMG-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="61pUOCdYA4Ud7aqYlrMG-1" target="61pUOCdYA4Ud7aqYlrMG-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jviA954YouWcVpFy5e6t-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="61pUOCdYA4Ud7aqYlrMG-23" target="61pUOCdYA4Ud7aqYlrMG-13">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="800" y="715" />
+              <mxPoint x="800" y="570" />
+              <mxPoint x="710" y="570" />
+              <mxPoint x="710" y="537" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="61pUOCdYA4Ud7aqYlrMG-23" value="Date &amp;amp; Time Creates A Sequence Based On Frequency Type" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="930" y="660" width="120" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="61pUOCdYA4Ud7aqYlrMG-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="20Q5iRajeQfxoAu31qEk-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="990" y="660" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="61pUOCdYA4Ud7aqYlrMG-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="61pUOCdYA4Ud7aqYlrMG-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="979" y="660" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GuUz6QWNCdzZyZeFkQ5n-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.513;exitY=1.002;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="GuUz6QWNCdzZyZeFkQ5n-1" target="GuUz6QWNCdzZyZeFkQ5n-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="480" y="686" as="sourcePoint" />
+            <mxPoint x="602" y="660" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GuUz6QWNCdzZyZeFkQ5n-3" value="Chore Status:&lt;div&gt;Future: Not Missed, Not Due, Not Completed&lt;br&gt;&lt;div&gt;Due = Ongoing Tasks = Chore Instance Date &amp;gt;= Today and Current Date &amp;lt; Next Chore Instance Date&lt;/div&gt;&lt;div&gt;Missed = Not Completed and Current Date &amp;gt; Next Chore Instance Date&lt;/div&gt;&lt;div&gt;Completed = Checkbox value = 1&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="670" width="470" height="160" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
