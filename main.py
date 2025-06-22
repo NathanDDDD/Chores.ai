@@ -14,18 +14,24 @@ Or simply:
 
 import sys
 import os
+import tkinter as tk
 
 # Add the current directory to the Python path so we can import our modules
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 try:
-    from chore_ui import ChoresAIApp
+    from chore_ui import ChoreUI
     print("Starting Chores.ai Desktop POC...")
     print("=" * 50)
     
+    # Create the main window
+    root = tk.Tk()
+    
     # Create and run the application
-    app = ChoresAIApp()
-    app.run()
+    app = ChoreUI(root)
+    
+    # Start the main event loop
+    root.mainloop()
     
 except ImportError as e:
     print(f"Error importing required modules: {e}")

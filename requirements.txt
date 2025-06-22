@@ -1,3 +1,22 @@
 # Chores.ai Desktop POC Dependencies
 # No external dependencies needed for basic POC (using built-in tkinter)
 # If we add more features later, we can add them here 
+
+# Core dependencies for Chores.ai Desktop POC
+
+# GUI framework
+tkinter  # Usually comes with Python
+
+# Calendar widget for date selection
+tkcalendar==1.6.1
+
+# Date and time handling (built-in, but listed for clarity)
+datetime  # Built-in module
+
+# JSON handling (built-in, but listed for clarity)
+json  # Built-in module
+
+# Type hints (built-in, but listed for clarity)
+typing  # Built-in module
+
+pywinauto==0.6.8

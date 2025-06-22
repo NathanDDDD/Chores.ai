@@ -16,7 +16,7 @@ class Chore:
     
     A chore has:
     - Basic info: name, description, category
-    - Frequency: type (daily, weekly, monthly, custom, specific_days) and value
+    - Frequency: type (daily, weekly, monthly, every_x_days, every_x_weeks, every_x_months, specific_days) and value
     - Status: completion tracking, due dates, streak counter
     - Metadata: creation date, last modified
     """
@@ -34,7 +34,7 @@ class Chore:
         
         Args:
             name: The name/title of the chore
-            frequency_type: How often the chore repeats ("daily", "weekly", "monthly", "custom", "specific_days")
+            frequency_type: How often the chore repeats ("daily", "weekly", "monthly", "every_x_days", "every_x_weeks", "every_x_months", "specific_days")
             frequency_value: The frequency value (e.g., every 2 days, every 3 weeks)
             description: Optional description of the chore
             category: The category this chore belongs to
@@ -55,8 +55,9 @@ class Chore:
         self.last_completed_date: Optional[datetime] = None
         self.next_due_date: Optional[datetime] = None
         self.completed_today = False
-        self.streak_counter = 0  # How many times completed in a row
-        self.miss_counter = 0    # How many times missed in a row
+        self.streak_counter = 0  # Number of consecutive completed instances in sequence
+        self.miss_counter = 0    # Number of consecutive missed instances in sequence
+        self.previous_status = None  # Track previous status for unmarking
         
         # Calculate initial due date
         self._calculate_next_due_date()
@@ -84,10 +85,16 @@ class Chore:
             elif self.frequency_type == "monthly":
                 # Simple monthly calculation (30 days)
                 self.next_due_date = self.last_completed_date + timedelta(days=30 * self.frequency_value)
+            elif self.frequency_type == "every_x_days":
+                self.next_due_date = self.last_completed_date + timedelta(days=self.frequency_value)
+            elif self.frequency_type == "every_x_weeks":
+                self.next_due_date = self.last_completed_date + timedelta(weeks=self.frequency_value)
+            elif self.frequency_type == "every_x_months":
+                self.next_due_date = self.last_completed_date + timedelta(days=30 * self.frequency_value)
             elif self.frequency_type == "specific_days":
                 # For specific days, find the next occurrence after last completion
                 self.next_due_date = self._get_next_specific_day_after(self.last_completed_date)
-            else:  # custom
+            else:  # fallback
                 self.next_due_date = self.last_completed_date + timedelta(days=self.frequency_value)
     
     def _get_next_specific_day(self) -> datetime:
@@ -170,10 +177,19 @@ class Chore:
         - Sets completed_today flag
         """
         now = datetime.now()
+        self.previous_status = self.completed_today
         self.last_completed_date = now
         self.completed_today = True
-        self.streak_counter += 1
-        self.miss_counter = 0  # Reset miss counter when completed
+        
+        # Update streak counter (consecutive completions)
+        if self.previous_status:
+            # Was already completed, maintain streak
+            pass
+        else:
+            # Was not completed, increment streak
+            self.streak_counter += 1
+            self.miss_counter = 0  # Reset miss counter when completed
+        
         self._calculate_next_due_date()
     
     def mark_missed(self) -> None:
@@ -185,9 +201,37 @@ class Chore:
         - Resets streak counter
         - Updates completed_today flag
         """
+        self.previous_status = self.completed_today
         self.completed_today = False
-        self.miss_counter += 1
-        self.streak_counter = 0  # Reset streak when missed
+        
+        if not self.previous_status:
+            # Was not completed, increment miss counter
+            self.miss_counter += 1
+            self.streak_counter = 0  # Reset streak when missed
+    
+    def unmark_completed(self) -> None:
+        """
+        Unmark this chore as completed (restore previous status).
+        
+        This method:
+        - Restores the previous completion status
+        - Adjusts streak/miss counters accordingly
+        """
+        if self.completed_today:
+            # Was completed, now unmarking
+            self.completed_today = False
+            
+            # Restore previous status
+            if self.previous_status is not None:
+                if not self.previous_status:
+                    # Was not completed before, decrement streak
+                    self.streak_counter = max(0, self.streak_counter - 1)
+                else:
+                    # Was completed before, maintain streak
+                    pass
+            else:
+                # No previous status, decrement streak
+                self.streak_counter = max(0, self.streak_counter - 1)
     
     def reset_daily_status(self) -> None:
         """
@@ -200,6 +244,7 @@ class Chore:
         if not self.completed_today and self.is_overdue():
             self.mark_missed()
         self.completed_today = False
+        self.previous_status = None
     
     def get_frequency_description(self) -> str:
         """
@@ -226,7 +271,13 @@ class Chore:
                 return "Monthly"
             else:
                 return f"Every {self.frequency_value} months"
-        else:  # custom
+        elif self.frequency_type == "every_x_days":
+            return f"Every {self.frequency_value} days"
+        elif self.frequency_type == "every_x_weeks":
+            return f"Every {self.frequency_value} weeks"
+        elif self.frequency_type == "every_x_months":
+            return f"Every {self.frequency_value} months"
+        else:  # fallback
             return f"Every {self.frequency_value} days"
     
     def to_dict(self) -> Dict[str, Any]:
@@ -248,7 +299,8 @@ class Chore:
             'next_due_date': self.next_due_date.isoformat() if self.next_due_date else None,
             'completed_today': self.completed_today,
             'streak_counter': self.streak_counter,
-            'miss_counter': self.miss_counter
+            'miss_counter': self.miss_counter,
+            'previous_status': self.previous_status
         }
     
     @classmethod
@@ -283,6 +335,7 @@ class Chore:
         chore.completed_today = data.get('completed_today', False)
         chore.streak_counter = data.get('streak_counter', 0)
         chore.miss_counter = data.get('miss_counter', 0)
+        chore.previous_status = data.get('previous_status', None)
         
         return chore
     
