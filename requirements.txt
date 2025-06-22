@@ -1,0 +1,3 @@
+# Chores.ai Desktop POC Dependencies
+# No external dependencies needed for basic POC (using built-in tkinter)
+# If we add more features later, we can add them here 
